@@ -101,6 +101,9 @@
 		0483202B2A1F545400152A23 /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
+				048320612A1F54A500152A23 /* ViewModel */,
+				048320602A1F549E00152A23 /* View */,
+				0483205F2A1F549500152A23 /* Model */,
 				0483202C2A1F545400152A23 /* AppDelegate.swift */,
 				0483202E2A1F545400152A23 /* SceneDelegate.swift */,
 				048320302A1F545400152A23 /* ViewController.swift */,
@@ -128,6 +131,27 @@
 				048320522A1F545600152A23 /* RecipesUITestsLaunchTests.swift */,
 			);
 			path = RecipesUITests;
+			sourceTree = "<group>";
+		};
+		0483205F2A1F549500152A23 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		048320602A1F549E00152A23 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		048320612A1F54A500152A23 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
