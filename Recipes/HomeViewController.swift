@@ -23,13 +23,23 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNibFile()
         
+        setupRecipeCategoryBtns()
+        setNibFileForRecipeCell()
+    }
+    
+    func setupRecipeCategoryBtns(){
         popylarBtn.layer.cornerRadius = 25
         breakfastBtn.layer.cornerRadius = 25
         lunchBtn.layer.cornerRadius = 25
         dinnerBtn.layer.cornerRadius = 25
         dessertBtn.layer.cornerRadius = 25
+        
+        popylarBtn.titleLabel?.text = .none
+        breakfastBtn.titleLabel?.text = .none
+        lunchBtn.titleLabel?.text = .none
+        dinnerBtn.titleLabel?.text = .none
+        dessertBtn.titleLabel?.text = .none
         
         recipeCategoryBtnArray.append(popylarBtn)
         recipeCategoryBtnArray.append(breakfastBtn)
@@ -38,7 +48,7 @@ class HomeViewController: UIViewController {
         recipeCategoryBtnArray.append(dessertBtn)
     }
 
-    func setNibFile(){
+    func setNibFileForRecipeCell(){
         let nibFile = UINib(nibName: "RecipeCell", bundle: nil)
         table.register(nibFile, forCellReuseIdentifier: "cell")
     }
