@@ -9,6 +9,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var recipesCategoryStackView: UIStackView!
+    
     @IBOutlet weak var table: UITableView!
     
     @IBOutlet weak var popylarBtn: UIButton!
@@ -16,6 +18,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var lunchBtn: UIButton!
     @IBOutlet weak var dinnerBtn: UIButton!
     @IBOutlet weak var dessertBtn: UIButton!
+    
+    var recipeCategoryBtnArray: [UIButton] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,51 +30,29 @@ class HomeViewController: UIViewController {
         lunchBtn.layer.cornerRadius = 25
         dinnerBtn.layer.cornerRadius = 25
         dessertBtn.layer.cornerRadius = 25
+        
+        recipeCategoryBtnArray.append(popylarBtn)
+        recipeCategoryBtnArray.append(breakfastBtn)
+        recipeCategoryBtnArray.append(lunchBtn)
+        recipeCategoryBtnArray.append(dinnerBtn)
+        recipeCategoryBtnArray.append(dessertBtn)
     }
 
     func setNibFile(){
         let nibFile = UINib(nibName: "RecipeCell", bundle: nil)
         table.register(nibFile, forCellReuseIdentifier: "cell")
     }
-    
-    @IBAction func popularBtnAction(_ sender: Any) {
-        popylarBtn.backgroundColor = UIColor(red: 0.851, green: 0.588, blue: 0.317, alpha: 1)
-        breakfastBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
-        lunchBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
-        dinnerBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
-        dessertBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
-    }
-    
-    @IBAction func breakfastBtnAction(_ sender: Any) {
-        breakfastBtn.backgroundColor = UIColor(red: 0.851, green: 0.588, blue: 0.317, alpha: 1)
-        popylarBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
-        lunchBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
-        dinnerBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
-        dessertBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
-    }
-    
-    @IBAction func lunchBtnAction(_ sender: Any) {
-        lunchBtn.backgroundColor = UIColor(red: 0.851, green: 0.588, blue: 0.317, alpha: 1)
-        breakfastBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
-        popylarBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
-        dinnerBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
-        dessertBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
-    }
-    
-    @IBAction func dinnerBtnAction(_ sender: Any) {
-        dinnerBtn.backgroundColor = UIColor(red: 0.851, green: 0.588, blue: 0.317, alpha: 1)
-        breakfastBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
-        lunchBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
-        popylarBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
-        dessertBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
-    }
-    
-    @IBAction func dessertBtnAction(_ sender: Any) {
-        dessertBtn.backgroundColor = UIColor(red: 0.851, green: 0.588, blue: 0.317, alpha: 1)
-        breakfastBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
-        lunchBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
-        dinnerBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
-        popylarBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
+  
+    @IBAction func onRecipeCategoryBtnTapped(_ sender: UIButton) {
+        
+        for categoryClickedBtn in recipeCategoryBtnArray{
+            
+            categoryClickedBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
+            
+            if categoryClickedBtn == sender{
+                categoryClickedBtn.backgroundColor = UIColor(red: 0.851, green: 0.588, blue: 0.317, alpha: 1)
+            }
+        }
     }
 }
 

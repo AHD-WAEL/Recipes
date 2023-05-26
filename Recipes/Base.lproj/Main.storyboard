@@ -69,7 +69,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="fire 1"/>
                                                 <connections>
-                                                    <action selector="popularBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hvc-JR-BeC"/>
+                                                    <action selector="onRecipeCategoryBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GEb-rf-SJm"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJD-i6-nTz">
@@ -83,9 +83,9 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="sLz-AE-yoG">
                                         <rect key="frame" x="78" y="0.0" width="68" height="100.66666666666667"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1j-mr-rid">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1j-mr-rid">
                                                 <rect key="frame" x="0.0" y="0.0" width="68" height="75"/>
-                                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                <color key="backgroundColor" red="0.890359079" green="0.89670746010000002" blue="0.91575260359999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="AW6-ln-l4e"/>
                                                 </constraints>
@@ -93,7 +93,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="breakfast-7 1"/>
                                                 <connections>
-                                                    <action selector="breakfastBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vzE-ml-Umf"/>
+                                                    <action selector="onRecipeCategoryBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bm8-NN-g4X"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breakfast" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCF-Oo-WYN">
@@ -107,9 +107,9 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dJG-bW-GKl">
                                         <rect key="frame" x="156" y="0.0" width="68" height="100.66666666666667"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFY-Ly-HTZ">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFY-Ly-HTZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="68" height="75"/>
-                                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                <color key="backgroundColor" red="0.890359079" green="0.89670746010000002" blue="0.91575260359999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="b8l-w7-f1j"/>
                                                 </constraints>
@@ -117,7 +117,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="lunch-box-2-512 1"/>
                                                 <connections>
-                                                    <action selector="lunchBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nbl-x0-UcD"/>
+                                                    <action selector="onRecipeCategoryBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EJ2-BK-iLl"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lunch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80G-x4-1Uj">
@@ -131,9 +131,9 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yxC-LF-jWJ">
                                         <rect key="frame" x="234" y="0.0" width="68" height="100.66666666666667"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKq-Tq-mZy">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKq-Tq-mZy">
                                                 <rect key="frame" x="0.0" y="0.0" width="68" height="75"/>
-                                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                <color key="backgroundColor" red="0.890359079" green="0.89670746010000002" blue="0.91575260359999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="rix-rE-1m3"/>
                                                 </constraints>
@@ -141,7 +141,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="wedding-dinner 1"/>
                                                 <connections>
-                                                    <action selector="dinnerBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XlH-xa-DSj"/>
+                                                    <action selector="onRecipeCategoryBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zIy-rF-cMy"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dinner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFH-Ee-nJ0">
@@ -155,9 +155,9 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="223-6P-OH0">
                                         <rect key="frame" x="312" y="0.0" width="65" height="100.66666666666667"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYn-Fr-7Qd">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYn-Fr-7Qd">
                                                 <rect key="frame" x="0.0" y="0.0" width="65" height="75"/>
-                                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                <color key="backgroundColor" red="0.890359079" green="0.89670746010000002" blue="0.91575260359999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="Ph5-D7-X7b"/>
                                                 </constraints>
@@ -165,7 +165,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="cake 1"/>
                                                 <connections>
-                                                    <action selector="dessertBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ypz-eO-cPt"/>
+                                                    <action selector="onRecipeCategoryBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QaH-Oj-bOE"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dessert" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8i-Id-O3i">
@@ -221,6 +221,7 @@
                         <outlet property="dinnerBtn" destination="pKq-Tq-mZy" id="Ppc-FS-XQt"/>
                         <outlet property="lunchBtn" destination="HFY-Ly-HTZ" id="xrI-CV-w5x"/>
                         <outlet property="popylarBtn" destination="AGR-6u-sr4" id="GJQ-ja-0Sq"/>
+                        <outlet property="recipesCategoryStackView" destination="NFw-os-vDZ" id="oCt-PV-y0w"/>
                         <outlet property="table" destination="SWc-dn-R0i" id="8hc-LV-rLv"/>
                     </connections>
                 </viewController>
@@ -285,9 +286,6 @@
         </systemColor>
         <systemColor name="tertiaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiarySystemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

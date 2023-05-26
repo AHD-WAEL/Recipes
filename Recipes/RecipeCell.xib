@@ -19,6 +19,9 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 20" translatesAutoresizingMaskIntoConstraints="NO" id="nvF-4V-Amt">
                         <rect key="frame" x="0.0" y="0.0" width="339" height="206"/>
                     </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 21" translatesAutoresizingMaskIntoConstraints="NO" id="zj6-F7-kYI">
+                        <rect key="frame" x="0.0" y="0.0" width="339" height="206"/>
+                    </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GoA-WZ-a1E">
                         <rect key="frame" x="16" y="16" width="40" height="40"/>
                         <constraints>
@@ -93,12 +96,16 @@
                     <constraint firstAttribute="bottom" secondItem="GEO-dm-fu6" secondAttribute="bottom" constant="32" id="3u0-4I-RkE"/>
                     <constraint firstItem="GEO-dm-fu6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="32" id="4PJ-JL-c7w"/>
                     <constraint firstAttribute="bottom" secondItem="nvF-4V-Amt" secondAttribute="bottom" id="5y1-9n-Yz1"/>
+                    <constraint firstAttribute="trailing" secondItem="zj6-F7-kYI" secondAttribute="trailing" id="AJm-S0-MP1"/>
                     <constraint firstAttribute="trailing" secondItem="GEO-dm-fu6" secondAttribute="trailing" constant="16" id="B25-rc-Cly"/>
+                    <constraint firstAttribute="bottom" secondItem="zj6-F7-kYI" secondAttribute="bottom" id="COz-QK-wya"/>
                     <constraint firstItem="nvF-4V-Amt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PYa-3h-vzJ"/>
+                    <constraint firstItem="zj6-F7-kYI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="VyH-10-Idp"/>
                     <constraint firstItem="GoA-WZ-a1E" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="btk-Nh-oOP"/>
                     <constraint firstAttribute="trailing" secondItem="nvF-4V-Amt" secondAttribute="trailing" id="iKa-8S-zl8"/>
                     <constraint firstItem="GoA-WZ-a1E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="pLD-bX-2Si"/>
                     <constraint firstItem="nvF-4V-Amt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="u1K-Bl-f54"/>
+                    <constraint firstItem="zj6-F7-kYI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="x0u-Ke-OOQ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -116,6 +123,7 @@
     <resources>
         <image name="Group" width="14" height="13"/>
         <image name="Rectangle 20" width="277" height="174"/>
+        <image name="Rectangle 21" width="383" height="174"/>
         <image name="game-icons_knife-fork" width="14" height="14"/>
         <image name="suit.heart" catalog="system" width="128" height="107"/>
     </resources>
