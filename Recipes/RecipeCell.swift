@@ -37,6 +37,7 @@ class RecipeCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         favBtn.titleLabel?.isHidden = true
+        favBtn.layer.cornerRadius = 12
         self.contentView.layer.cornerRadius = 8
         self.contentView.layer.masksToBounds = true
         self.layer.cornerRadius = 8

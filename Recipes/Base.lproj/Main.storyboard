@@ -53,27 +53,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NFw-os-vDZ">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NFw-os-vDZ">
                                 <rect key="frame" x="8" y="187" width="377" height="100.66666666666669"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EtQ-d7-dm6">
-                                        <rect key="frame" x="0.0" y="0.0" width="68" height="100.66666666666667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="100.66666666666667"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGR-6u-sr4">
-                                                <rect key="frame" x="0.0" y="0.0" width="68" height="75"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="75"/>
                                                 <color key="backgroundColor" red="0.89035907900663824" green="0.89670746014251634" blue="0.91575260355014998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="Sqo-KE-309"/>
                                                 </constraints>
                                                 <color key="tintColor" systemColor="labelColor"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="fire 1"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="fire 1"/>
                                                 <connections>
                                                     <action selector="onRecipeCategoryBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GEb-rf-SJm"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJD-i6-nTz">
-                                                <rect key="frame" x="0.0" y="83" width="68" height="17.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="83" width="67.333333333333329" height="17.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -81,23 +81,23 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="sLz-AE-yoG">
-                                        <rect key="frame" x="78" y="0.0" width="68" height="100.66666666666667"/>
+                                        <rect key="frame" x="77.333333333333343" y="0.0" width="67.333333333333343" height="100.66666666666667"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1j-mr-rid">
-                                                <rect key="frame" x="0.0" y="0.0" width="68" height="75"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="75"/>
                                                 <color key="backgroundColor" red="0.890359079" green="0.89670746010000002" blue="0.91575260359999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="AW6-ln-l4e"/>
                                                 </constraints>
                                                 <color key="tintColor" systemColor="labelColor"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="breakfast-7 1"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="breakfast-7 1"/>
                                                 <connections>
                                                     <action selector="onRecipeCategoryBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bm8-NN-g4X"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breakfast" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCF-Oo-WYN">
-                                                <rect key="frame" x="0.0" y="82" width="68" height="18.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="82" width="67.333333333333329" height="18.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -105,23 +105,23 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dJG-bW-GKl">
-                                        <rect key="frame" x="156" y="0.0" width="68" height="100.66666666666667"/>
+                                        <rect key="frame" x="154.66666666666666" y="0.0" width="67.666666666666657" height="100.66666666666667"/>
                                         <subviews>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFY-Ly-HTZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="68" height="75"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67.666666666666671" height="75"/>
                                                 <color key="backgroundColor" red="0.890359079" green="0.89670746010000002" blue="0.91575260359999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="b8l-w7-f1j"/>
                                                 </constraints>
                                                 <color key="tintColor" systemColor="labelColor"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="lunch-box-2-512 1"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="lunch-box-2-512 1"/>
                                                 <connections>
                                                     <action selector="onRecipeCategoryBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EJ2-BK-iLl"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lunch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80G-x4-1Uj">
-                                                <rect key="frame" x="0.0" y="83" width="68" height="17.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="83" width="67.666666666666671" height="17.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -129,23 +129,23 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yxC-LF-jWJ">
-                                        <rect key="frame" x="234" y="0.0" width="68" height="100.66666666666667"/>
+                                        <rect key="frame" x="232.33333333333334" y="0.0" width="67.333333333333343" height="100.66666666666667"/>
                                         <subviews>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKq-Tq-mZy">
-                                                <rect key="frame" x="0.0" y="0.0" width="68" height="75"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="75"/>
                                                 <color key="backgroundColor" red="0.890359079" green="0.89670746010000002" blue="0.91575260359999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="rix-rE-1m3"/>
                                                 </constraints>
                                                 <color key="tintColor" systemColor="labelColor"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="wedding-dinner 1"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="wedding-dinner 1"/>
                                                 <connections>
                                                     <action selector="onRecipeCategoryBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zIy-rF-cMy"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dinner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFH-Ee-nJ0">
-                                                <rect key="frame" x="0.0" y="83" width="68" height="17.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="83" width="67.333333333333329" height="17.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -153,23 +153,23 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="223-6P-OH0">
-                                        <rect key="frame" x="312" y="0.0" width="65" height="100.66666666666667"/>
+                                        <rect key="frame" x="309.66666666666669" y="0.0" width="67.333333333333314" height="100.66666666666667"/>
                                         <subviews>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYn-Fr-7Qd">
-                                                <rect key="frame" x="0.0" y="0.0" width="65" height="75"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="75"/>
                                                 <color key="backgroundColor" red="0.890359079" green="0.89670746010000002" blue="0.91575260359999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="Ph5-D7-X7b"/>
                                                 </constraints>
                                                 <color key="tintColor" systemColor="labelColor"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="cake 1"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="cake 1"/>
                                                 <connections>
                                                     <action selector="onRecipeCategoryBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QaH-Oj-bOE"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dessert" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8i-Id-O3i">
-                                                <rect key="frame" x="0.0" y="83" width="65" height="17.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="83" width="67.333333333333329" height="17.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -254,6 +254,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Qxi-Vz-6oP"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="n4X-RJ-8Eg">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
