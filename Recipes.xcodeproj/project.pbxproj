@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0483202D2A1F545400152A23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483202C2A1F545400152A23 /* AppDelegate.swift */; };
 		0483202F2A1F545400152A23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483202E2A1F545400152A23 /* SceneDelegate.swift */; };
-		048320312A1F545400152A23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048320302A1F545400152A23 /* ViewController.swift */; };
+		048320312A1F545400152A23 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048320302A1F545400152A23 /* HomeViewController.swift */; };
 		048320342A1F545400152A23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048320322A1F545400152A23 /* Main.storyboard */; };
 		048320372A1F545400152A23 /* Recipes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 048320352A1F545400152A23 /* Recipes.xcdatamodeld */; };
 		048320392A1F545600152A23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048320382A1F545600152A23 /* Assets.xcassets */; };
@@ -17,6 +17,8 @@
 		048320472A1F545600152A23 /* RecipesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048320462A1F545600152A23 /* RecipesTests.swift */; };
 		048320512A1F545600152A23 /* RecipesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048320502A1F545600152A23 /* RecipesUITests.swift */; };
 		048320532A1F545600152A23 /* RecipesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048320522A1F545600152A23 /* RecipesUITestsLaunchTests.swift */; };
+		049D248E2A20AB1200244427 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D248C2A20AB1200244427 /* RecipeCell.swift */; };
+		049D248F2A20AB1200244427 /* RecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049D248D2A20AB1200244427 /* RecipeCell.xib */; };
 		646D2E7315CD2E17E84E699A /* Pods_Recipes_RecipesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06D105B9800460FBCB591D0E /* Pods_Recipes_RecipesUITests.framework */; };
 		84AE7F862F7ED1679ECCEC66 /* Pods_Recipes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FA7EC611B197EB81B92820 /* Pods_Recipes.framework */; };
 		B9F33E08A2E85DA3B8F257F8 /* Pods_RecipesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41B0A8EB91437DF5CC147FF /* Pods_RecipesTests.framework */; };
@@ -44,7 +46,7 @@
 		048320292A1F545400152A23 /* Recipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0483202C2A1F545400152A23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0483202E2A1F545400152A23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		048320302A1F545400152A23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		048320302A1F545400152A23 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		048320332A1F545400152A23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		048320362A1F545400152A23 /* Recipes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Recipes.xcdatamodel; sourceTree = "<group>"; };
 		048320382A1F545600152A23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +57,8 @@
 		0483204C2A1F545600152A23 /* RecipesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		048320502A1F545600152A23 /* RecipesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesUITests.swift; sourceTree = "<group>"; };
 		048320522A1F545600152A23 /* RecipesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		049D248C2A20AB1200244427 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		049D248D2A20AB1200244427 /* RecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCell.xib; sourceTree = "<group>"; };
 		06D105B9800460FBCB591D0E /* Pods_Recipes_RecipesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipes_RecipesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC2CDCC8FA029C8C50F0983 /* Pods-Recipes-RecipesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipes-RecipesUITests.debug.xcconfig"; path = "Target Support Files/Pods-Recipes-RecipesUITests/Pods-Recipes-RecipesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		11779A4D85CC545D18C34B2F /* Pods-Recipes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipes.debug.xcconfig"; path = "Target Support Files/Pods-Recipes/Pods-Recipes.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,12 +129,14 @@
 				0483205F2A1F549500152A23 /* Model */,
 				0483202C2A1F545400152A23 /* AppDelegate.swift */,
 				0483202E2A1F545400152A23 /* SceneDelegate.swift */,
-				048320302A1F545400152A23 /* ViewController.swift */,
+				048320302A1F545400152A23 /* HomeViewController.swift */,
 				048320322A1F545400152A23 /* Main.storyboard */,
 				048320382A1F545600152A23 /* Assets.xcassets */,
 				0483203A2A1F545600152A23 /* LaunchScreen.storyboard */,
 				0483203D2A1F545600152A23 /* Info.plist */,
 				048320352A1F545400152A23 /* Recipes.xcdatamodeld */,
+				049D248C2A20AB1200244427 /* RecipeCell.swift */,
+				049D248D2A20AB1200244427 /* RecipeCell.xib */,
 				E2B4DD622A20D5CA0044159B /* ModelClass.swift */,
 			);
 			path = Recipes;
@@ -307,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0483203C2A1F545600152A23 /* LaunchScreen.storyboard in Resources */,
+				049D248F2A20AB1200244427 /* RecipeCell.xib in Resources */,
 				048320392A1F545600152A23 /* Assets.xcassets in Resources */,
 				048320342A1F545400152A23 /* Main.storyboard in Resources */,
 			);
@@ -436,8 +443,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049D248E2A20AB1200244427 /* RecipeCell.swift in Sources */,
+				048320312A1F545400152A23 /* HomeViewController.swift in Sources */,
 				E2B4DD632A20D5CA0044159B /* ModelClass.swift in Sources */,
-				048320312A1F545400152A23 /* ViewController.swift in Sources */,
 				0483202D2A1F545400152A23 /* AppDelegate.swift in Sources */,
 				0483202F2A1F545400152A23 /* SceneDelegate.swift in Sources */,
 				048320372A1F545400152A23 /* Recipes.xcdatamodeld in Sources */,
@@ -621,7 +629,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recipes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -649,7 +657,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recipes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
