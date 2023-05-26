@@ -22,7 +22,7 @@
 		646D2E7315CD2E17E84E699A /* Pods_Recipes_RecipesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06D105B9800460FBCB591D0E /* Pods_Recipes_RecipesUITests.framework */; };
 		84AE7F862F7ED1679ECCEC66 /* Pods_Recipes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FA7EC611B197EB81B92820 /* Pods_Recipes.framework */; };
 		B9F33E08A2E85DA3B8F257F8 /* Pods_RecipesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41B0A8EB91437DF5CC147FF /* Pods_RecipesTests.framework */; };
-		E2B4DD632A20D5CA0044159B /* ModelClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B4DD622A20D5CA0044159B /* ModelClass.swift */; };
+		E2B4DD632A20D5CA0044159B /* RecipesCategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B4DD622A20D5CA0044159B /* RecipesCategoriesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,7 @@
 		4DCA4D1429C0B8F7675E120E /* Pods-Recipes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipes.release.xcconfig"; path = "Target Support Files/Pods-Recipes/Pods-Recipes.release.xcconfig"; sourceTree = "<group>"; };
 		7A943470FC269E12A62A3BC6 /* Pods-Recipes-RecipesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipes-RecipesUITests.release.xcconfig"; path = "Target Support Files/Pods-Recipes-RecipesUITests/Pods-Recipes-RecipesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B41B0A8EB91437DF5CC147FF /* Pods_RecipesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2B4DD622A20D5CA0044159B /* ModelClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelClass.swift; sourceTree = "<group>"; };
+		E2B4DD622A20D5CA0044159B /* RecipesCategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesCategoriesModel.swift; sourceTree = "<group>"; };
 		FC2BC71E05912AED86554247 /* Pods-RecipesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipesTests.release.xcconfig"; path = "Target Support Files/Pods-RecipesTests/Pods-RecipesTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,7 +137,7 @@
 				048320352A1F545400152A23 /* Recipes.xcdatamodeld */,
 				049D248C2A20AB1200244427 /* RecipeCell.swift */,
 				049D248D2A20AB1200244427 /* RecipeCell.xib */,
-				E2B4DD622A20D5CA0044159B /* ModelClass.swift */,
+				E2B4DD622A20D5CA0044159B /* RecipesCategoriesModel.swift */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";
@@ -445,7 +445,7 @@
 			files = (
 				049D248E2A20AB1200244427 /* RecipeCell.swift in Sources */,
 				048320312A1F545400152A23 /* HomeViewController.swift in Sources */,
-				E2B4DD632A20D5CA0044159B /* ModelClass.swift in Sources */,
+				E2B4DD632A20D5CA0044159B /* RecipesCategoriesModel.swift in Sources */,
 				0483202D2A1F545400152A23 /* AppDelegate.swift in Sources */,
 				0483202F2A1F545400152A23 /* SceneDelegate.swift in Sources */,
 				048320372A1F545400152A23 /* Recipes.xcdatamodeld in Sources */,
