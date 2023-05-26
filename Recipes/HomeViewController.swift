@@ -35,12 +35,6 @@ class HomeViewController: UIViewController {
         dinnerBtn.layer.cornerRadius = 25
         dessertBtn.layer.cornerRadius = 25
         
-        popylarBtn.titleLabel?.isHidden = true
-        breakfastBtn.titleLabel?.isHidden = true
-        lunchBtn.titleLabel?.isHidden = true
-        dinnerBtn.titleLabel?.isHidden = true
-        dessertBtn.titleLabel?.isHidden = true
-        
         recipeCategoryBtnArray.append(popylarBtn)
         recipeCategoryBtnArray.append(breakfastBtn)
         recipeCategoryBtnArray.append(lunchBtn)
