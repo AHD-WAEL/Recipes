@@ -8,24 +8,19 @@
 import UIKit
 import Kingfisher
 class FavoritesViewController: UIViewController {
-    
-    @IBOutlet weak var noFavoriteRecipes: UIView!
-    @IBOutlet weak var table: UITableView!
+    //MARK: - IBOutlets
+    @IBOutlet weak private var noFavoriteRecipes: UIView!
+    @IBOutlet weak private var table: UITableView!
+    //MARK: - Properties
     var favoritesViewModel = FavoritesViewModel(manager: FavoritesDBManager.instance)
     override func viewDidLoad() {
         super.viewDidLoad()
         setNibFileForRecipeCell()
-        let item1 = RecipeItem(recipeId: 1, recipeServingsNum: "1", recipeName: "Pizza", recipeImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkldJ0LiL7mxhUKNC6nlcroRv50EEWPJ-X3A&usqp=CAU", recipeType: "Lunch", recipeBy: "Ahmed")
-        let item2 = RecipeItem(recipeId: 2, recipeServingsNum: "2", recipeName: "chicken", recipeImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkldJ0LiL7mxhUKNC6nlcroRv50EEWPJ-X3A&usqp=CAU", recipeType: "Lunch", recipeBy: "Safiya")
-        let item3 = RecipeItem(recipeId: 3, recipeServingsNum: "3", recipeName: "cheese", recipeImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkldJ0LiL7mxhUKNC6nlcroRv50EEWPJ-X3A&usqp=CAU", recipeType: "Dinner", recipeBy: "Ahd")
         favoritesViewModel.passDataToFavoritesController={[weak self] in
             DispatchQueue.main.async {
                 self?.table.reloadData()
             }
         }
-        favoritesViewModel.insertRecipeIntoDB(item: item1)
-        favoritesViewModel.insertRecipeIntoDB(item: item2)
-        favoritesViewModel.insertRecipeIntoDB(item: item3)
         favoritesViewModel.getAllRecipesFromDB()
         checkIfThereAreFavoriteRecipes(list: favoritesViewModel.RecipesList)
     }
@@ -57,11 +52,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource{
             cell.recipeCategoryLabel.text=favoritesViewModel.RecipesList[indexPath.row].recipeType
             cell.recipeNamelabel.text=favoritesViewModel.RecipesList[indexPath.row].recipeName
             cell.recipeServeingsNoLabel.text=favoritesViewModel.RecipesList[indexPath.row].recipeServingsNum
-            print(favoritesViewModel.RecipesList[indexPath.row].recipeImage)
-            print(favoritesViewModel.RecipesList[indexPath.row].recipeBy)
-            print(favoritesViewModel.RecipesList[indexPath.row].recipeType)
-            print(favoritesViewModel.RecipesList[indexPath.row].recipeName)
-            print(favoritesViewModel.RecipesList[indexPath.row].recipeServingsNum)
+            
         return cell
     }
     
