@@ -13,6 +13,7 @@ struct Response: Decodable {
 }
 
 struct Result:Decodable{
+    let id:Int
     let name: String
     let thumbnail_url: String
     let credits: [Brand]
@@ -21,6 +22,7 @@ struct Result:Decodable{
     let num_servings: Int?
     let instructions: [Instruction]?
     let sections: [Section]?
+    let yields:String?
 }
 
 struct Instruction: Decodable {
