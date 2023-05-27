@@ -32,22 +32,13 @@ class HomeViewModel:HomeViewModelProtocol{
     func getHomeCategoriesData(tag: Int, completionHandler: @escaping([Result]) -> Void) {
         guard let recipeCategoryName = RecipeCategory(rawValue: tag)?.name
         else { return }
-        
-        print("viewModel------------- \(recipeCategoryName)")
-        
+              
         apiClient.getRecipesForACategory(category: recipeCategoryName) { [weak self] response in
             self?.recipies = response?.results ?? []
             self?.renderRecipies.value = ()
             
-//            completionHandler(response?.results ?? .init())
         }
     }
-    
-//    func getHomeCategoryBy(tag: Int) {
-//        guard let recipeCategoryName = RecipeCategory(rawValue: tag)?.name
-//        else { return }
-//
-//    }
     
     func configureCell(cell:ConfigurableCell,index:Int){
         guard let recipie = recipies[safe: index] else {
@@ -104,12 +95,5 @@ class Observable<T> {
                 observer(value)
             }
         }
-    }
-}
-
-extension Collection {
-    /// Returns the element at the specified index if it is within bounds, otherwise nil.
-    subscript (safe index: Index) -> Element? {
-        return indices.contains(index) ? self[index] : nil
     }
 }

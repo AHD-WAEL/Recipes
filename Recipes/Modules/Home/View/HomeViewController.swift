@@ -41,7 +41,6 @@ class HomeViewController: UIViewController {
     }
     
     func loadHomeDataFromApi(){
-        print("taped============= \(tapedRecipeCategoryBtn)")
         homeViewModel.getHomeCategoriesData(tag: tapedRecipeCategoryBtn) {[weak self] recipiesArr in
             self!.categoryRecipieArr = recipiesArr
             self!.table.reloadData()
@@ -49,8 +48,6 @@ class HomeViewController: UIViewController {
     }
     
     func setupRecipeCategoryBtns(){
-        //popylarBtn.sendActions(for: .touchUpInside)
-        
         popylarBtn.backgroundColor = UIColor(red: Constants.tapedRedColorRecipeButton, green: Constants.tapedGreenColorRecipeButton, blue: Constants.tapedBlueColorRecipeButton, alpha: Constants.alphaEqualsOne)
         
         popylarBtn.layer.cornerRadius = Constants.recipeCategoryButtonCornerRadius
@@ -81,7 +78,6 @@ class HomeViewController: UIViewController {
                 categoryClickedBtn.backgroundColor = UIColor(red: Constants.tapedRedColorRecipeButton, green: Constants.tapedGreenColorRecipeButton, blue: Constants.tapedBlueColorRecipeButton, alpha: Constants.alphaEqualsOne)
                 tapedRecipeCategoryBtn = categoryClickedBtn.tag
                 loadHomeDataFromApi()
-                print("++++++++++++++++++ \(tapedRecipeCategoryBtn)")
             }
         }
     }
