@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Item{
+struct RecipeItem{
     let recipeId:Int
     let recipeServingsNum:String
     let recipeName:String

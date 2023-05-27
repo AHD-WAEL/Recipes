@@ -15,9 +15,9 @@ class FavoritesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNibFileForRecipeCell()
-        let item1 = Item(recipeId: 1, recipeServingsNum: "1", recipeName: "Pizza", recipeImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkldJ0LiL7mxhUKNC6nlcroRv50EEWPJ-X3A&usqp=CAU", recipeType: "Lunch", recipeBy: "Ahmed")
-        let item2 = Item(recipeId: 2, recipeServingsNum: "2", recipeName: "chicken", recipeImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkldJ0LiL7mxhUKNC6nlcroRv50EEWPJ-X3A&usqp=CAU", recipeType: "Lunch", recipeBy: "Safiya")
-        let item3 = Item(recipeId: 3, recipeServingsNum: "3", recipeName: "cheese", recipeImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkldJ0LiL7mxhUKNC6nlcroRv50EEWPJ-X3A&usqp=CAU", recipeType: "Dinner", recipeBy: "Ahd")
+        let item1 = RecipeItem(recipeId: 1, recipeServingsNum: "1", recipeName: "Pizza", recipeImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkldJ0LiL7mxhUKNC6nlcroRv50EEWPJ-X3A&usqp=CAU", recipeType: "Lunch", recipeBy: "Ahmed")
+        let item2 = RecipeItem(recipeId: 2, recipeServingsNum: "2", recipeName: "chicken", recipeImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkldJ0LiL7mxhUKNC6nlcroRv50EEWPJ-X3A&usqp=CAU", recipeType: "Lunch", recipeBy: "Safiya")
+        let item3 = RecipeItem(recipeId: 3, recipeServingsNum: "3", recipeName: "cheese", recipeImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkldJ0LiL7mxhUKNC6nlcroRv50EEWPJ-X3A&usqp=CAU", recipeType: "Dinner", recipeBy: "Ahd")
         favoritesViewModel.passDataToFavoritesController={[weak self] in
             DispatchQueue.main.async {
                 self?.table.reloadData()
@@ -33,7 +33,7 @@ class FavoritesViewController: UIViewController {
         let nibFile = UINib(nibName: "RecipeCell", bundle: nil)
         self.table.register(nibFile, forCellReuseIdentifier: "cell")
     }
-    func checkIfThereAreFavoriteRecipes(list:[Item]){
+    func checkIfThereAreFavoriteRecipes(list:[RecipeItem]){
         if(list.count != 0){
             self.table.backgroundView = nil
         }

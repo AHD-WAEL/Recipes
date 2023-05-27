@@ -15,7 +15,7 @@ class FavoritesViewModel{
     
     var passDataToFavoritesController:(()->Void) = {}
 
-    var RecipesList : [Item]!=[]{
+    var RecipesList : [RecipeItem]!=[]{
         didSet{
             passDataToFavoritesController()
         }
@@ -25,11 +25,11 @@ class FavoritesViewModel{
         RecipesList=manager.fetchAll()
     }
     
-    func deleteRecipeFromDB(item:Item){
+    func deleteRecipeFromDB(item:RecipeItem){
         manager.deleteRow(itemObj: item)
     }
     
-    func insertRecipeIntoDB(item:Item){
+    func insertRecipeIntoDB(item:RecipeItem){
         manager.insertRow(itemObj: item)
     }
     

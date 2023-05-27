@@ -10,12 +10,12 @@ import CoreData
 import UIKit
 
 protocol FavoritesDBService{
-    func insertRow(itemObj:Item)
-    func deleteRow(itemObj:Item)
+    func insertRow(itemObj:RecipeItem)
+    func deleteRow(itemObj:RecipeItem)
     func deleteAll()
-    func fetchAll()->[Item]
-    func fetchRow(item:Item)->[NSManagedObject]
-    func isExist(item:Item)->Bool
+    func fetchAll()->[RecipeItem]
+    func fetchRow(item:RecipeItem)->[NSManagedObject]
+    func isExist(item:RecipeItem)->Bool
 }
 
 class FavoritesDBManager : FavoritesDBService{
@@ -26,7 +26,7 @@ class FavoritesDBManager : FavoritesDBService{
         managedContext = appDelegate.persistentContainer.viewContext
     }
     
-    func insertRow(itemObj:Item){
+    func insertRow(itemObj:RecipeItem){
         let entity = NSEntityDescription.entity(forEntityName: "FavoritesTable", in: managedContext)
         let movie = NSManagedObject(entity: entity!, insertInto: managedContext)
         movie.setValue(itemObj.recipeId, forKey: "recipeId")
@@ -43,7 +43,7 @@ class FavoritesDBManager : FavoritesDBService{
         }
     }
     
-    func deleteRow(itemObj:Item){
+    func deleteRow(itemObj:RecipeItem){
         let row = fetchRow(item:itemObj)
         managedContext.delete(row[0])
         do{
@@ -68,14 +68,14 @@ class FavoritesDBManager : FavoritesDBService{
         }
     }
     
-    func fetchAll()->[Item]{
-        var result=[Item]()
+    func fetchAll()->[RecipeItem]{
+        var result=[RecipeItem]()
         var arr:[NSManagedObject]!
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoritesTable")
         do{
             arr=(try managedContext.fetch(fetchRequest))
             for item in arr{
-                result.append(Item(recipeId: item.value(forKey: "recipeId") as! Int, recipeServingsNum: item.value(forKey: "recipeServingsNum") as! String , recipeName: item.value(forKey: "recipeName") as! String, recipeImage: item.value(forKey: "recipeImage") as! String, recipeType: item.value(forKey: "recipeType") as! String, recipeBy: item.value(forKey: "recipeBy") as! String))
+                result.append(RecipeItem(recipeId: item.value(forKey: "recipeId") as! Int, recipeServingsNum: item.value(forKey: "recipeServingsNum") as! String , recipeName: item.value(forKey: "recipeName") as! String, recipeImage: item.value(forKey: "recipeImage") as! String, recipeType: item.value(forKey: "recipeType") as! String, recipeBy: item.value(forKey: "recipeBy") as! String))
             }
         }
         catch let error as NSError{
@@ -84,7 +84,7 @@ class FavoritesDBManager : FavoritesDBService{
         return result
     }
     
-    func fetchRow(item:Item)->[NSManagedObject]{
+    func fetchRow(item:RecipeItem)->[NSManagedObject]{
         
         var arr:[NSManagedObject]!
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoritesTable")
@@ -99,7 +99,7 @@ class FavoritesDBManager : FavoritesDBService{
         return arr
     }
     
-    func isExist(item:Item)->Bool{
+    func isExist(item:RecipeItem)->Bool{
         
         let list = fetchAll()
         for recipe in list{
