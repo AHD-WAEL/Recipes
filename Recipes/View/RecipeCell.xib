@@ -35,54 +35,54 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="GEO-dm-fu6">
-                        <rect key="frame" x="131.33333333333337" y="32" width="191.66666666666663" height="142"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="GEO-dm-fu6">
+                        <rect key="frame" x="190.33333333333334" y="16" width="118.66666666666666" height="174"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veg Noodles Recipe" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmz-L4-BPb">
-                                <rect key="frame" x="0.0" y="0.0" width="191.66666666666666" height="28.666666666666668"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Veg Noodles Recipe" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmz-L4-BPb">
+                                <rect key="frame" x="0.0" y="0.0" width="100.33333333333333" height="70.333333333333329"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Qadeer Khan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pct-Rf-Abq">
-                                <rect key="frame" x="68" y="33.666666666666671" width="123.66666666666669" height="38.333333333333329"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <rect key="frame" x="0.0" y="75.333333333333329" width="94.666666666666671" height="62.666666666666671"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="2xK-Hd-11o">
-                                <rect key="frame" x="82.333333333333314" y="77" width="109.33333333333331" height="30"/>
+                                <rect key="frame" x="0.0" y="143" width="75" height="13"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game-icons_knife-fork" translatesAutoresizingMaskIntoConstraints="NO" id="7EW-Qd-3as">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="13" height="13"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="kCS-wb-OxR"/>
-                                            <constraint firstAttribute="height" constant="30" id="qVN-QY-TeG"/>
+                                            <constraint firstAttribute="width" constant="13" id="kCS-wb-OxR"/>
+                                            <constraint firstAttribute="height" constant="13" id="qVN-QY-TeG"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paki Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIk-KD-1yh">
-                                        <rect key="frame" x="44.000000000000021" y="0.0" width="65.333333333333314" height="30"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <rect key="frame" x="27" y="0.0" width="48" height="13"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="11"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="l1q-Ch-wFB">
-                                <rect key="frame" x="75.666666666666657" y="112" width="116" height="30"/>
+                                <rect key="frame" x="0.0" y="161" width="80" height="13"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group" translatesAutoresizingMaskIntoConstraints="NO" id="qog-kZ-sIz">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="13" height="13"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="ogu-Ik-hTk"/>
-                                            <constraint firstAttribute="height" constant="30" id="vIi-xb-I7C"/>
+                                            <constraint firstAttribute="width" constant="13" id="ogu-Ik-hTk"/>
+                                            <constraint firstAttribute="height" constant="13" id="vIi-xb-I7C"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servings: 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhN-BP-Rs3">
-                                        <rect key="frame" x="44" y="0.0" width="72" height="30"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <rect key="frame" x="27" y="0.0" width="53" height="13"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="11"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -92,11 +92,12 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="GEO-dm-fu6" secondAttribute="bottom" constant="32" id="3u0-4I-RkE"/>
-                    <constraint firstItem="GEO-dm-fu6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="32" id="4PJ-JL-c7w"/>
+                    <constraint firstItem="GEO-dm-fu6" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.35" id="3ZZ-pG-4m0"/>
+                    <constraint firstAttribute="bottom" secondItem="GEO-dm-fu6" secondAttribute="bottom" constant="16" id="3u0-4I-RkE"/>
                     <constraint firstAttribute="bottom" secondItem="nvF-4V-Amt" secondAttribute="bottom" id="5y1-9n-Yz1"/>
+                    <constraint firstItem="GEO-dm-fu6" firstAttribute="top" secondItem="GoA-WZ-a1E" secondAttribute="top" id="9kj-FF-o2m"/>
                     <constraint firstAttribute="trailing" secondItem="zj6-F7-kYI" secondAttribute="trailing" id="AJm-S0-MP1"/>
-                    <constraint firstAttribute="trailing" secondItem="GEO-dm-fu6" secondAttribute="trailing" constant="16" id="B25-rc-Cly"/>
+                    <constraint firstAttribute="trailing" secondItem="GEO-dm-fu6" secondAttribute="trailing" constant="30" id="B25-rc-Cly"/>
                     <constraint firstAttribute="bottom" secondItem="zj6-F7-kYI" secondAttribute="bottom" id="COz-QK-wya"/>
                     <constraint firstItem="nvF-4V-Amt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PYa-3h-vzJ"/>
                     <constraint firstItem="zj6-F7-kYI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="VyH-10-Idp"/>
