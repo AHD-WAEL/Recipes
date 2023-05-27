@@ -41,7 +41,7 @@ class HomeViewController: UIViewController {
     }
     
     func loadHomeDataFromApi(){
-            homeViewModel.getHomeCategoriesData(category: "breakfast") {[weak self] recipiesArr in
+        homeViewModel.getHomeCategoriesData(category: "breakfast") {[weak self] recipiesArr in
                 self!.categoryRecipieArr = recipiesArr
                 self!.table.reloadData()
             }
