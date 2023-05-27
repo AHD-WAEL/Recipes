@@ -20,7 +20,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="9wU-hp-hsa">
-                        <imageReference key="image" image="suit.heart" catalog="system" renderingMode="hierarchical-single">
+                        <imageReference key="image" image="User" renderingMode="hierarchical-single">
                             <hierarchicalColors>
                                 <color white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color systemColor="secondaryLabelColor"/>
@@ -48,13 +48,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iga-ho-jAC">
-                                <rect key="frame" x="16" y="155" width="361" height="24"/>
+                                <rect key="frame" x="16" y="161" width="361" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NFw-os-vDZ">
-                                <rect key="frame" x="8" y="187" width="377" height="100.66666666666669"/>
+                                <rect key="frame" x="8" y="201" width="377" height="100.66666666666669"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EtQ-d7-dm6">
                                         <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="100.66666666666667"/>
@@ -179,7 +179,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SWc-dn-R0i">
-                                <rect key="frame" x="0.0" y="303.66666666666674" width="393" height="465.33333333333326"/>
+                                <rect key="frame" x="0.0" y="333.66666666666674" width="393" height="435.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="GF3-Je-9CU"/>
@@ -198,15 +198,15 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NFw-os-vDZ" secondAttribute="trailing" constant="8" id="SE8-NO-9IE"/>
                             <constraint firstItem="SWc-dn-R0i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wj1-w4-r8Q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SWc-dn-R0i" secondAttribute="trailing" id="ZP6-Dn-0a7"/>
-                            <constraint firstItem="iga-ho-jAC" firstAttribute="top" secondItem="if5-y6-KkY" secondAttribute="bottom" constant="16" id="Zal-eK-ueJ"/>
-                            <constraint firstItem="NFw-os-vDZ" firstAttribute="top" secondItem="iga-ho-jAC" secondAttribute="bottom" constant="8" id="aro-9V-Ldv"/>
+                            <constraint firstItem="iga-ho-jAC" firstAttribute="top" secondItem="if5-y6-KkY" secondAttribute="bottom" constant="22" id="Zal-eK-ueJ"/>
+                            <constraint firstItem="NFw-os-vDZ" firstAttribute="top" secondItem="iga-ho-jAC" secondAttribute="bottom" constant="16" id="aro-9V-Ldv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SWc-dn-R0i" secondAttribute="bottom" id="fCo-gQ-OJ2"/>
                             <constraint firstItem="if5-y6-KkY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="k8Q-zD-yqG"/>
-                            <constraint firstItem="SWc-dn-R0i" firstAttribute="top" secondItem="NFw-os-vDZ" secondAttribute="bottom" constant="16" id="n2y-Ir-9RY"/>
+                            <constraint firstItem="SWc-dn-R0i" firstAttribute="top" secondItem="NFw-os-vDZ" secondAttribute="bottom" constant="32" id="n2y-Ir-9RY"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="kq4-nZ-UUB">
-                        <imageReference key="image" image="homekit" catalog="system" renderingMode="hierarchical-single">
+                        <imageReference key="image" image="Home" renderingMode="hierarchical-single">
                             <hierarchicalColors>
                                 <color white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color systemColor="secondaryLabelColor"/>
@@ -269,12 +269,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Home" width="40" height="40"/>
+        <image name="User" width="40" height="40"/>
         <image name="breakfast-7 1" width="44" height="40"/>
         <image name="cake 1" width="44" height="44"/>
         <image name="fire 1" width="44" height="44"/>
-        <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="lunch-box-2-512 1" width="44" height="44"/>
-        <image name="suit.heart" catalog="system" width="128" height="107"/>
         <image name="wedding-dinner 1" width="44" height="44"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

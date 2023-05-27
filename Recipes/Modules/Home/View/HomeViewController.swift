@@ -21,12 +21,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var dessertBtn: UIButton!
     
     var recipeCategoryBtnArray: [UIButton] = []
+    var tapedRecipeCategoryBtn = 0
     var homeViewModel:HomeViewModelProtocol! = HomeViewModel(apiClient: ApiClient())
     var categoryRecipieArr:[Result] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupRecipeCategoryBtns()
         setNibFileForRecipeCell()
         configureBinding()
@@ -48,17 +48,15 @@ class HomeViewController: UIViewController {
         }
     
     func setupRecipeCategoryBtns(){
-        popylarBtn.layer.cornerRadius = 25
-        breakfastBtn.layer.cornerRadius = 25
-        lunchBtn.layer.cornerRadius = 25
-        dinnerBtn.layer.cornerRadius = 25
-        dessertBtn.layer.cornerRadius = 25
+        //popylarBtn.sendActions(for: .touchUpInside)
         
-        popylarBtn.titleLabel?.isHidden = true
-        breakfastBtn.titleLabel?.isHidden = true
-        lunchBtn.titleLabel?.isHidden = true
-        dinnerBtn.titleLabel?.isHidden = true
-        dessertBtn.titleLabel?.isHidden = true
+        popylarBtn.backgroundColor = UIColor(red: Constants.tapedRedColorRecipeButton, green: Constants.tapedGreenColorRecipeButton, blue: Constants.tapedBlueColorRecipeButton, alpha: Constants.alphaEqualsOne)
+        
+        popylarBtn.layer.cornerRadius = Constants.recipeCategoryButtonCornerRadius
+        breakfastBtn.layer.cornerRadius = Constants.recipeCategoryButtonCornerRadius
+        lunchBtn.layer.cornerRadius = Constants.recipeCategoryButtonCornerRadius
+        dinnerBtn.layer.cornerRadius = Constants.recipeCategoryButtonCornerRadius
+        dessertBtn.layer.cornerRadius = Constants.recipeCategoryButtonCornerRadius
         
         recipeCategoryBtnArray.append(popylarBtn)
         recipeCategoryBtnArray.append(breakfastBtn)
@@ -68,24 +66,24 @@ class HomeViewController: UIViewController {
     }
 
     func setNibFileForRecipeCell(){
-        let nibFile = UINib(nibName: "RecipeCell", bundle: nil)
-        table.register(nibFile, forCellReuseIdentifier: "cell")
+        let nibFile = UINib(nibName: Constants.recipeCellNibFileName, bundle: nil)
+        table.register(nibFile, forCellReuseIdentifier: Constants.cellIdentifier)
     }
   
     @IBAction func onRecipeCategoryBtnTapped(_ sender: UIButton) {
         
         for categoryClickedBtn in recipeCategoryBtnArray{
             
-            categoryClickedBtn.backgroundColor = UIColor(red: 0.890, green: 0.897, blue: 0.916, alpha: 1)
+            categoryClickedBtn.backgroundColor = UIColor(red: Constants.resetRedColorRecipeButton, green: Constants.resetGreenColorRecipeButton, blue: Constants.resetBlueColorRecipeButton, alpha: Constants.alphaEqualsOne)
             
             if categoryClickedBtn == sender{
-                categoryClickedBtn.backgroundColor = UIColor(red: 0.851, green: 0.588, blue: 0.317, alpha: 1)
+                categoryClickedBtn.backgroundColor = UIColor(red: Constants.tapedRedColorRecipeButton, green: Constants.tapedGreenColorRecipeButton, blue: Constants.tapedBlueColorRecipeButton, alpha: Constants.alphaEqualsOne)
+                tapedRecipeCategoryBtn = categoryClickedBtn.tag
+                print("++++++++++++++++++ \(tapedRecipeCategoryBtn)")
             }
         }
     }
 }
-
-
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,10 +93,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RecipeCell
-//        cell.recipeNamelabel.text = categoryRecipieArr[indexPath.row].name
-//        cell.recipeCheifLabel.text = "By: \(categoryRecipieArr[indexPath.row].credits[0].name)"
-//        cell.recipeServeingsNoLabel.text = categoryRecipieArr[indexPath.row].yields
-//        cell.recipeImg.kf.setImage(with: URL(string: categoryRecipieArr[indexPath.row].thumbnail_url),placeholder: UIImage(named: "Rectangle 20"))
         homeViewModel.configureCell(cell: cell, index: indexPath.row)
         return cell
     }
@@ -108,3 +102,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     }
 }
 
+extension HomeViewController{
+    class Constants{
+        static let recipeCategoryButtonCornerRadius = CGFloat(25)
+        static let recipeCellNibFileName = "RecipeCell"
+        static let cellIdentifier = "cell"
+        static let resetRedColorRecipeButton = 0.890
+        static let resetGreenColorRecipeButton = 0.897
+        static let resetBlueColorRecipeButton = 0.916
+        static let alphaEqualsOne = CGFloat(1)
+        static let tapedRedColorRecipeButton = 0.851
+        static let tapedGreenColorRecipeButton = 0.588
+        static let tapedBlueColorRecipeButton = 0.317
+    }
+}
