@@ -118,7 +118,7 @@
                 <outlet property="recipeServeingsNoLabel" destination="yhN-BP-Rs3" id="E3G-i2-2kn"/>
                 <outlet property="servingsNoImg" destination="qog-kZ-sIz" id="ib4-Wj-7zi"/>
             </connections>
-            <point key="canvasLocation" x="218" y="124"/>
+            <point key="canvasLocation" x="217.55725190839695" y="123.94366197183099"/>
         </tableViewCell>
     </objects>
     <resources>
