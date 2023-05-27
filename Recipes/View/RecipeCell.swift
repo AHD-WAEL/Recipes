@@ -60,7 +60,7 @@ class RecipeCell: UITableViewCell,ConfigurableCell {
        recipeNamelabel.text = recipie.name
         recipeCheifLabel.text = "By: \(recipie.credits[0].name)"
         recipeServeingsNoLabel.text = recipie.yields
-        recipeImg.kf.setImage(with: URL(string: recipie.thumbnail_url),placeholder: UIImage(named: "Rectangle 20"))
+        recipeImg.kf.setImage(with: URL(string: recipie.thumbnailUrl),placeholder: UIImage(named: "Rectangle 20"))
     }
     
 }
