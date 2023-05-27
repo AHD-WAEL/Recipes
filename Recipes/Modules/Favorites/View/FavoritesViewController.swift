@@ -29,14 +29,8 @@ class FavoritesViewController: UIViewController {
         self.table.register(nibFile, forCellReuseIdentifier: "cell")
     }
     func checkIfThereAreFavoriteRecipes(list:[RecipeItem]){
-        if(list.count != 0){
-            self.table.backgroundView = nil
-        }
-        else{
-            self.table.backgroundView = noFavoriteRecipes
-        }
+        self.table.backgroundView = !list.isEmpty ? noFavoriteRecipes: .none
     }
-   
 }
 extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource{
     
