@@ -15,13 +15,14 @@ class FavoritesViewModel{
             passDataToFavoritesController()
         }
     }
+    
     init(manager: FavoritesDBService) {
         self.manager = manager
     }
-    func getAllRecipesFromDB(){
+    func getAllRecipesFromDB() {
         RecipesList=manager.fetchAll()
     }
-    func deleteRecipeFromDB(item:RecipeItem){
-        manager.deleteRow(itemObj: item)
+    func deleteRecipeFromDB(recipeItem:RecipeItem) {
+        manager.deleteRow(recipeItem: recipeItem)
     }
 }

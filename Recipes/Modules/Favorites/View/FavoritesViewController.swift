@@ -66,7 +66,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource{
         if(editingStyle == .delete){
             let alert = UIAlertController(title: "Warning!!", message: "Are You sure you want to delete this recipe?", preferredStyle: UIAlertController.Style.actionSheet)
             let action1 = UIAlertAction(title: "Yes", style: UIAlertAction.Style.default){_ in
-                self.favoritesViewModel.deleteRecipeFromDB(item: self.favoritesViewModel.RecipesList[indexPath.row])
+                self.favoritesViewModel.deleteRecipeFromDB(recipeItem: self.favoritesViewModel.RecipesList[indexPath.row])
                 self.favoritesViewModel.RecipesList.remove(at: indexPath.row)
                 self.table.reloadData()
                 self.checkIfThereAreFavoriteRecipes(list: self.favoritesViewModel.RecipesList)
