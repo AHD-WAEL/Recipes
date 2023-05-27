@@ -6,3 +6,11 @@
 //
 
 import Foundation
+struct Item{
+    let recipeId:Int
+    let recipeServingsNum:String
+    let recipeName:String
+    let recipeImage:String
+    let recipeType:String
+    let recipeBy:String
+}
