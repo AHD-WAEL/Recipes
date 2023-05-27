@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import Alamofire
 
-class RecipeCell: UITableViewCell {
+protocol ConfigurableCell{
+    func setDataToTableCell(recipie:Result)
+}
+
+class RecipeCell: UITableViewCell,ConfigurableCell {
 
     @IBOutlet weak var recipeServeingsNoLabel: UILabel!
     @IBOutlet weak var recipeCategoryLabel: UILabel!
@@ -49,6 +54,13 @@ class RecipeCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setDataToTableCell(recipie:Result) {
+       recipeNamelabel.text = recipie.name
+        recipeCheifLabel.text = "By: \(recipie.credits[0].name)"
+        recipeServeingsNoLabel.text = recipie.yields
+        recipeImg.kf.setImage(with: URL(string: recipie.thumbnail_url),placeholder: UIImage(named: "Rectangle 20"))
     }
     
 }

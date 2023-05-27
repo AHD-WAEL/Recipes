@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HomeViewController: UIViewController {
 
@@ -21,12 +22,30 @@ class HomeViewController: UIViewController {
     
     var recipeCategoryBtnArray: [UIButton] = []
     var tapedRecipeCategoryBtn = 0
+    var homeViewModel:HomeViewModelProtocol! = HomeViewModel(apiClient: ApiClient())
+    var categoryRecipieArr:[Result] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupRecipeCategoryBtns()
         setNibFileForRecipeCell()
+        configureBinding()
+        loadHomeDataFromApi()
     }
+    
+    func configureBinding() {
+        homeViewModel.recipies.bind { [weak self] _ in
+            guard let self = self else { return }
+            self.table.reloadData()
+        }
+    }
+    
+    func loadHomeDataFromApi(){
+            homeViewModel.getHomeCategoriesData(category: "breakfast") {[weak self] recipiesArr in
+                self!.categoryRecipieArr = recipiesArr
+                self!.table.reloadData()
+            }
+        }
     
     func setupRecipeCategoryBtns(){
         //popylarBtn.sendActions(for: .touchUpInside)
@@ -68,13 +87,13 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return categoryRecipieArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! RecipeCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RecipeCell
+        homeViewModel.configureCell(cell: cell, index: indexPath.row)
         return cell
     }
     
