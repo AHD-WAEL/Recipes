@@ -34,22 +34,20 @@ class HomeViewController: UIViewController {
     }
     
     func configureBinding() {
-        homeViewModel.recipies.bind { [weak self] _ in
+        homeViewModel.renderRecipies.bind { [weak self] in
             guard let self = self else { return }
             self.table.reloadData()
         }
     }
     
     func loadHomeDataFromApi(){
-        homeViewModel.getHomeCategoriesData(category: "breakfast") {[weak self] recipiesArr in
-                self!.categoryRecipieArr = recipiesArr
-                self!.table.reloadData()
-            }
+        homeViewModel.getHomeCategoriesData(tag: tapedRecipeCategoryBtn) {[weak self] recipiesArr in
+            self?.categoryRecipieArr = recipiesArr
+            self?.table.reloadData()
         }
+    }
     
     func setupRecipeCategoryBtns(){
-        //popylarBtn.sendActions(for: .touchUpInside)
-        
         popylarBtn.backgroundColor = UIColor(red: Constants.tapedRedColorRecipeButton, green: Constants.tapedGreenColorRecipeButton, blue: Constants.tapedBlueColorRecipeButton, alpha: Constants.alphaEqualsOne)
         
         popylarBtn.layer.cornerRadius = Constants.recipeCategoryButtonCornerRadius
@@ -79,7 +77,7 @@ class HomeViewController: UIViewController {
             if categoryClickedBtn == sender{
                 categoryClickedBtn.backgroundColor = UIColor(red: Constants.tapedRedColorRecipeButton, green: Constants.tapedGreenColorRecipeButton, blue: Constants.tapedBlueColorRecipeButton, alpha: Constants.alphaEqualsOne)
                 tapedRecipeCategoryBtn = categoryClickedBtn.tag
-                print("++++++++++++++++++ \(tapedRecipeCategoryBtn)")
+                loadHomeDataFromApi()
             }
         }
     }
@@ -87,7 +85,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoryRecipieArr.count
+        return homeViewModel.recipesCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

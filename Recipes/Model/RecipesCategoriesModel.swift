@@ -8,15 +8,15 @@
 import Foundation
 
 struct Response: Decodable {
-    var count: Int
-    var results: [Result]
+    var count: Int?
+    var results: [Result]?
 }
 
 struct Result:Decodable{
-    let id:Int
-    let name: String
-    let thumbnailUrl: String
-    let credits: [Brand]
+    let id:Int?
+    let name: String?
+    let thumbnailUrl: String?
+    let credits: [Brand]?
     let originalVideoUrl: String?
     let videoUrl: String?
     let numServings: Int?
@@ -35,12 +35,12 @@ struct Result:Decodable{
 
 struct Instruction: Decodable {
     var appliance: String?
-    var endTime: Int
+    var endTime: Int?
     var temperature: Int?
-    var id: Int
-    var position: Int
-    let displayText: String
-    let startTime: Int
+    var id: Int?
+    var position: Int?
+    let displayText: String?
+    let startTime: Int?
     
     enum CodingKeys: String, CodingKey {
         case startTime = "start_time"
@@ -51,12 +51,12 @@ struct Instruction: Decodable {
 }
 
 struct Ingredient: Decodable {
-    var createdAt: Int
-    var displayPlural: String
-    var id: Int
-    var displaySingular: String
-    var updatedAt: Int
-    var name: String
+    var createdAt: Int?
+    var displayPlural: String?
+    var id: Int?
+    var displaySingular: String?
+    var updatedAt: Int?
+    var name: String?
     
     enum CodingKeys: String, CodingKey {
         case displaySingular = "display_singular"
@@ -68,18 +68,18 @@ struct Ingredient: Decodable {
 }
 
 struct Section: Decodable {
-    var components: [Component]
+    var components: [Component]?
     var name: String?
-    var position: Int
+    var position: Int?
 }
 
 struct Component: Decodable {
-    var id:Int
-    var position: Int
-    var measurements: [Measurement]
-    var rawText:String
-    var extraComment: String
-    var ingredient: Ingredient
+    var id:Int?
+    var position: Int?
+    var measurements: [Measurement]?
+    var rawText:String?
+    var extraComment: String?
+    var ingredient: Ingredient?
     
     enum CodingKeys: String, CodingKey {
         case rawText = "raw_text"
@@ -89,17 +89,17 @@ struct Component: Decodable {
 }
 
 struct Measurement: Decodable {
-    let id: Int
-    let unit: Unit
-    let quantity: String
+    let id: Int?
+    let unit: Unit?
+    let quantity: String?
 }
 
 struct Unit: Decodable {
-    var system: String
-    var name: String
-    var displayPlural: String
-    var displaySingular:String
-    var abbreviation: String
+    var system: String?
+    var name: String?
+    var displayPlural: String?
+    var displaySingular:String?
+    var abbreviation: String?
     
     enum CodingKeys: String, CodingKey {
         case displaySingular = "display_singular"
@@ -110,7 +110,7 @@ struct Unit: Decodable {
 
 struct Brand: Decodable {
     let imageUrl: String?
-    let name: String
+    let name: String?
     let id: Int?
     let slug: String?
     let type: String?

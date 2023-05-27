@@ -14,6 +14,7 @@ protocol ConfigurableCell{
 
 class RecipeCell: UITableViewCell,ConfigurableCell {
 
+    @IBOutlet weak var servingsNoImg: UIImageView!
     @IBOutlet weak var recipeServeingsNoLabel: UILabel!
     @IBOutlet weak var recipeCategoryLabel: UILabel!
     @IBOutlet weak var recipeCheifLabel: UILabel!
@@ -52,15 +53,26 @@ class RecipeCell: UITableViewCell,ConfigurableCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func setDataToTableCell(recipie:Result) {
        recipeNamelabel.text = recipie.name
-        recipeCheifLabel.text = "By: \(recipie.credits[0].name)"
-        recipeServeingsNoLabel.text = recipie.yields
-        recipeImg.kf.setImage(with: URL(string: recipie.thumbnailUrl),placeholder: UIImage(named: "Rectangle 20"))
+        recipeCheifLabel.text = "By: \(String(describing: recipie.credits?[0].name ?? ""))"
+        if recipie.yields == nil || recipie.yields?.isEmpty ?? true {
+            servingsNoImg.isHidden = true
+            recipeServeingsNoLabel.isHidden = true
+
+        }else{
+            recipeServeingsNoLabel.isHidden = false
+            recipeServeingsNoLabel.text = recipie.yields
+            servingsNoImg.isHidden = false
+        }
+        recipeImg.kf.setImage(with: URL(string: recipie.thumbnailUrl ?? ""),placeholder: UIImage(named: Constants.placeHolderImage))
     }
-    
+}
+
+extension RecipeCell{
+    class Constants{
+        static let placeHolderImage = "Rectangle 20"
+    }
 }

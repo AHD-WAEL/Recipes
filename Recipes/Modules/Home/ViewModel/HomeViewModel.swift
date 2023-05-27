@@ -9,40 +9,38 @@ import Foundation
 import Alamofire
 
 protocol HomeViewModelProtocol{
-    var recipies: Observable<[Result]> { get }
-    var recipesCount:Int { get }
+    var renderRecipies: Observable<Void> { get }
+    var recipesCount: Int { get }
 
-    func getHomeCategoriesData(category:String,completionHandler:@escaping([Result])->Void)
-    func configureCell(cell:ConfigurableCell,index:Int)
+    func getHomeCategoriesData(tag: Int, completionHandler:@escaping([Result])->Void)
+    func configureCell(cell: ConfigurableCell, index:Int)
 }
 
 class HomeViewModel:HomeViewModelProtocol{
    
     var apiClient:ApiClientProtocol
-    private(set) var recipies: Observable<[Result]> = .init() {
-        didSet {
-            guard let value = recipies.value else { return }
-            recipesCount = value.count
-            print(recipesCount)
-        }
+    var recipies: [Result] = .init()
+    private(set) var renderRecipies: Observable<Void> = .init()
+    var recipesCount: Int {
+        recipies.count
     }
-    var recipesCount = 0
     
     init(apiClient: ApiClientProtocol) {
         self.apiClient = apiClient
     }
     
-    func getHomeCategoriesData(category: String, completionHandler: @escaping([Result]) -> Void) {
-        apiClient.getData(urlDetails: prepareUrl(category: category)){ [weak self] (response:Response?) in
-            self!.recipies.value = response?.results ?? []
-            completionHandler(response?.results ?? .init())
-//            self!.recipesCount = response?.results.count ?? 0
+    func getHomeCategoriesData(tag: Int, completionHandler:@escaping([Result])->Void) {
+        guard let recipeCategoryName = RecipeCategory(rawValue: tag)?.name
+        else { return }
+        apiClient.getData(urlDetails: prepareUrl(category: recipeCategoryName)){ [weak self] (response:Response?) in
+            self?.recipies = response?.results ?? []
+            self?.renderRecipies.value = ()
         }
     }
     
-    func prepareUrl(category:String) -> ApiModel{
+    func prepareUrl(category: String) -> ApiModel{
         let urlString = "https://tasty.p.rapidapi.com/recipes/list?"
-        let category = "breakfast"
+        let category = category
         let parameters: Parameters = [
             "from": "0",
             "size":"20",
@@ -53,8 +51,31 @@ class HomeViewModel:HomeViewModelProtocol{
     }
     
     func configureCell(cell:ConfigurableCell,index:Int){
-        guard let recipie = recipies.value?[index] else { return }
+        guard let recipie = recipies[safe: index] else {
+            return
+        }
         cell.setDataToTableCell(recipie: recipie)
+    }
+}
+
+// MARK: - Category
+private extension HomeViewModel {
+    enum RecipeCategory: Int{
+        case popular
+        case breakfast
+        case lunch
+        case dinner
+        case dessert
+        
+        var name: String{
+            switch self {
+            case .popular: return "middle_eastern"
+            case .breakfast: return "breakfast"
+            case .lunch: return "lunch"
+            case .dinner: return "dinner"
+            case .dessert: return "desserts"
+            }
+        }
     }
 }
 
