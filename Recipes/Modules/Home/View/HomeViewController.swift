@@ -42,8 +42,8 @@ class HomeViewController: UIViewController {
     
     func loadHomeDataFromApi(){
         homeViewModel.getHomeCategoriesData(tag: tapedRecipeCategoryBtn) {[weak self] recipiesArr in
-            self!.categoryRecipieArr = recipiesArr
-            self!.table.reloadData()
+            self?.categoryRecipieArr = recipiesArr
+            self?.table.reloadData()
         }
     }
     
