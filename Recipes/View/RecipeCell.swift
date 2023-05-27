@@ -63,11 +63,16 @@ class RecipeCell: UITableViewCell,ConfigurableCell {
             recipeServeingsNoLabel.isHidden = true
 
         }else{
-            recipeServeingsNoLabel.text = recipie.yields
             recipeServeingsNoLabel.isHidden = false
+            recipeServeingsNoLabel.text = recipie.yields
             servingsNoImg.isHidden = false
         }
-        recipeImg.kf.setImage(with: URL(string: recipie.thumbnail_url ?? ""),placeholder: UIImage(named: "Rectangle 20"))
+        recipeImg.kf.setImage(with: URL(string: recipie.thumbnailUrl ?? ""),placeholder: UIImage(named: Constants.placeHolderImage))
     }
-    
+}
+
+extension RecipeCell{
+    class Constants{
+        static let placeHolderImage = "Rectangle 20"
+    }
 }

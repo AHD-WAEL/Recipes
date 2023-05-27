@@ -6,8 +6,7 @@
 //
 
 import Foundation
-
-
+import Alamofire
 
 protocol HomeViewModelProtocol{
     var renderRecipies: Observable<Void> { get }
@@ -18,6 +17,7 @@ protocol HomeViewModelProtocol{
 }
 
 class HomeViewModel:HomeViewModelProtocol{
+   
     var apiClient:ApiClientProtocol
     var recipies: [Result] = .init()
     private(set) var renderRecipies: Observable<Void> = .init()
@@ -29,15 +29,25 @@ class HomeViewModel:HomeViewModelProtocol{
         self.apiClient = apiClient
     }
     
-    func getHomeCategoriesData(tag: Int, completionHandler: @escaping([Result]) -> Void) {
+    func getHomeCategoriesData(tag: Int, completionHandler:@escaping([Result])->Void) {
         guard let recipeCategoryName = RecipeCategory(rawValue: tag)?.name
         else { return }
-              
-        apiClient.getRecipesForACategory(category: recipeCategoryName) { [weak self] response in
+        apiClient.getData(urlDetails: prepareUrl(category: recipeCategoryName)){ [weak self] (response:Response?) in
             self?.recipies = response?.results ?? []
             self?.renderRecipies.value = ()
-            
         }
+    }
+    
+    func prepareUrl(category: String) -> ApiModel{
+        let urlString = "https://tasty.p.rapidapi.com/recipes/list?"
+        let category = category
+        let parameters: Parameters = [
+            "from": "0",
+            "size":"20",
+            "tags":"\(category)",
+        ]
+        let url = ApiModel(url: urlString, parameters: parameters, httpMethod:ApiMethod.Get)
+        return url
     }
     
     func configureCell(cell:ConfigurableCell,index:Int){

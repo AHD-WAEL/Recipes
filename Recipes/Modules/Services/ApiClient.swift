@@ -9,25 +9,19 @@ import Foundation
 import Alamofire
 
 protocol ApiClientProtocol{
-    func getRecipesForACategory(category:String,completionHandler:@escaping(Response?)->Void)
+    func getData<T:Decodable>(urlDetails: ApiModel, completionHandler: @escaping(T?)->Void)
 }
 class ApiClient:ApiClientProtocol{
-    func getRecipesForACategory(category:String,completionHandler:@escaping(Response?)->Void){
-        let url = "https://tasty.p.rapidapi.com/recipes/list?"
-        let parameters: Parameters = [
-            "from": "0",
-            "size":"20",
-            "tags":"\(category)",
-        ]
-        let headers:HTTPHeaders = [
-            "X-RapidAPI-Key": "608e33d92emshadaed143ae17241p18c449jsnc4587664b78a",
-            "X-RapidAPI-Host": "tasty.p.rapidapi.com"
-        ]
+    
+    func getData<T:Decodable>(urlDetails: ApiModel, completionHandler: @escaping(T?) -> Void){
+        let url = urlDetails.url
+        let parameters = urlDetails.parameters
+        let headers = urlDetails.headers
         AF.request(url,parameters: parameters , headers: headers).response{response in
             switch response.result {
             case .success(let data):
                 do{
-                    let result = try JSONDecoder().decode(Response.self, from: data!)
+                    let result = try JSONDecoder().decode(T.self, from: data!)
                     completionHandler(result)
                 }catch let error{
                     completionHandler(nil)
