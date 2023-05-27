@@ -9,7 +9,16 @@ import Foundation
 import CoreData
 import UIKit
 
-class FavoritesDBManager{
+protocol FavoritesDBService{
+    func insertRow(itemObj:Item)
+    func deleteRow(itemObj:Item)
+    func deleteAll()
+    func fetchAll()->[Item]
+    func fetchRow(item:Item)->[NSManagedObject]
+    func isExist(item:Item)->Bool
+}
+
+class FavoritesDBManager : FavoritesDBService{
     static let instance = FavoritesDBManager()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var managedContext :NSManagedObjectContext!
@@ -62,7 +71,7 @@ class FavoritesDBManager{
     func fetchAll()->[Item]{
         var result=[Item]()
         var arr:[NSManagedObject]!
-      let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoritesTable")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoritesTable")
         do{
             arr=(try managedContext.fetch(fetchRequest))
             for item in arr{
@@ -93,8 +102,8 @@ class FavoritesDBManager{
     func isExist(item:Item)->Bool{
         
         let list = fetchAll()
-        for ele in list{
-            if(ele.recipeId==item.recipeId){
+        for recipe in list{
+            if(recipe.recipeId==recipe.recipeId){
                 return true
             }
         }
