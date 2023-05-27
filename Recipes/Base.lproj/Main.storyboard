@@ -9,15 +9,61 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Favorites View Controller-->
         <scene sceneID="byw-rg-jbs">
             <objects>
-                <viewController id="LmA-Pf-fWQ" sceneMemberID="viewController">
+                <viewController id="LmA-Pf-fWQ" customClass="FavoritesViewController" customModule="Recipes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5cH-Qp-qee">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSo-WT-hMb">
+                                <rect key="frame" x="63" y="268" width="267" height="316"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no favourite place holder" translatesAutoresizingMaskIntoConstraints="NO" id="ODT-F6-9Qu">
+                                        <rect key="frame" x="0.0" y="0.0" width="267" height="316"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="ODT-F6-9Qu" firstAttribute="top" secondItem="aSo-WT-hMb" secondAttribute="top" id="BrS-aF-Up1"/>
+                                    <constraint firstItem="ODT-F6-9Qu" firstAttribute="leading" secondItem="aSo-WT-hMb" secondAttribute="leading" id="Isa-ia-4Q7"/>
+                                    <constraint firstAttribute="trailing" secondItem="ODT-F6-9Qu" secondAttribute="trailing" id="j1a-eT-WCa"/>
+                                    <constraint firstAttribute="bottom" secondItem="ODT-F6-9Qu" secondAttribute="bottom" id="qwa-Ap-b7K"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5dz-Zz-Kfm">
+                                <rect key="frame" x="0.0" y="155" width="393" height="614"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="LmA-Pf-fWQ" id="i9j-8x-45z"/>
+                                    <outlet property="delegate" destination="LmA-Pf-fWQ" id="luq-wg-69y"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBy-BS-TdZ">
+                                <rect key="frame" x="0.0" y="103" width="393" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="jUn-sK-MKr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jUn-sK-MKr" firstAttribute="bottom" secondItem="aSo-WT-hMb" secondAttribute="bottom" constant="185" id="AxC-GO-2Pq"/>
+                            <constraint firstItem="jUn-sK-MKr" firstAttribute="trailing" secondItem="aSo-WT-hMb" secondAttribute="trailing" constant="63" id="BUo-R5-Rga"/>
+                            <constraint firstItem="aSo-WT-hMb" firstAttribute="centerX" secondItem="5cH-Qp-qee" secondAttribute="centerX" id="Ghl-yH-w4K"/>
+                            <constraint firstItem="UBy-BS-TdZ" firstAttribute="leading" secondItem="jUn-sK-MKr" secondAttribute="leading" id="MIZ-X6-xAg"/>
+                            <constraint firstItem="aSo-WT-hMb" firstAttribute="leading" secondItem="jUn-sK-MKr" secondAttribute="leading" constant="63" id="T78-A5-fQH"/>
+                            <constraint firstItem="5dz-Zz-Kfm" firstAttribute="trailing" secondItem="jUn-sK-MKr" secondAttribute="trailing" id="V7a-UV-UPE"/>
+                            <constraint firstItem="5dz-Zz-Kfm" firstAttribute="leading" secondItem="jUn-sK-MKr" secondAttribute="leading" id="aE0-xi-IvO"/>
+                            <constraint firstItem="UBy-BS-TdZ" firstAttribute="top" secondItem="jUn-sK-MKr" secondAttribute="top" id="iUj-qj-Dsy"/>
+                            <constraint firstItem="aSo-WT-hMb" firstAttribute="centerY" secondItem="5cH-Qp-qee" secondAttribute="centerY" id="ine-Iu-EEx"/>
+                            <constraint firstItem="5dz-Zz-Kfm" firstAttribute="bottom" secondItem="jUn-sK-MKr" secondAttribute="bottom" id="lVF-5Y-bDx"/>
+                            <constraint firstItem="aSo-WT-hMb" firstAttribute="top" secondItem="jUn-sK-MKr" secondAttribute="top" constant="165" id="pWz-Oi-BJo"/>
+                            <constraint firstItem="5dz-Zz-Kfm" firstAttribute="top" secondItem="UBy-BS-TdZ" secondAttribute="bottom" constant="16" id="wXD-L9-arL"/>
+                            <constraint firstItem="UBy-BS-TdZ" firstAttribute="trailing" secondItem="jUn-sK-MKr" secondAttribute="trailing" id="zPb-SX-dKf"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="9wU-hp-hsa">
                         <imageReference key="image" image="suit.heart" catalog="system" renderingMode="hierarchical-single">
@@ -28,6 +74,10 @@
                             </hierarchicalColors>
                         </imageReference>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="noFavoriteRecipes" destination="aSo-WT-hMb" id="8na-h9-z6r"/>
+                        <outlet property="table" destination="5dz-Zz-Kfm" id="1DR-ur-A1f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x0x-vp-Abi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -274,6 +324,7 @@
         <image name="fire 1" width="44" height="44"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="lunch-box-2-512 1" width="44" height="44"/>
+        <image name="no favourite place holder" width="267" height="316"/>
         <image name="suit.heart" catalog="system" width="128" height="107"/>
         <image name="wedding-dinner 1" width="44" height="44"/>
         <systemColor name="labelColor">
