@@ -10,37 +10,62 @@ import Foundation
 
 
 protocol HomeViewModelProtocol{
-    var recipies: Observable<[Result]> { get }
-    
-    func getHomeCategoriesData(category:String,completionHandler:@escaping([Result])->Void)
-    func configureCell(cell:ConfigurableCell,index:Int)
+    var renderRecipies: Observable<Void> { get }
+    var recipesCount: Int { get }
+
+    func getHomeCategoriesData(tag: Int, completionHandler:@escaping([Result])->Void)
+    func configureCell(cell: ConfigurableCell, index:Int)
 }
 
 class HomeViewModel:HomeViewModelProtocol{
     var apiClient:ApiClientProtocol
-    private(set) var recipies: Observable<[Result]> = .init() {
-        didSet {
-            guard let value = recipies.value else { return }
-            recipesCount = value.count
-        }
+    var recipies: [Result] = .init()
+    private(set) var renderRecipies: Observable<Void> = .init()
+    var recipesCount: Int {
+        recipies.count
     }
-    var recipesCount = 0
     
     init(apiClient: ApiClientProtocol) {
         self.apiClient = apiClient
     }
     
-    func getHomeCategoriesData(category: String, completionHandler: @escaping([Result]) -> Void) {
-        apiClient.getRecipesForACategory(category: category) { [weak self]response in
-            self!.recipies.value = response?.results ?? []
-            completionHandler(response?.results ?? .init())
-//            self!.recipesCount = response?.results.count ?? 0
+    func getHomeCategoriesData(tag: Int, completionHandler: @escaping([Result]) -> Void) {
+        guard let recipeCategoryName = RecipeCategory(rawValue: tag)?.name
+        else { return }
+              
+        apiClient.getRecipesForACategory(category: recipeCategoryName) { [weak self] response in
+            self?.recipies = response?.results ?? []
+            self?.renderRecipies.value = ()
+            
         }
     }
     
     func configureCell(cell:ConfigurableCell,index:Int){
-        guard let recipie = recipies.value?[index] else { return }
+        guard let recipie = recipies[safe: index] else {
+            return
+        }
         cell.setDataToTableCell(recipie: recipie)
+    }
+}
+
+// MARK: - Category
+private extension HomeViewModel {
+    enum RecipeCategory: Int{
+        case popular
+        case breakfast
+        case lunch
+        case dinner
+        case dessert
+        
+        var name: String{
+            switch self {
+            case .popular: return "middle_eastern"
+            case .breakfast: return "breakfast"
+            case .lunch: return "lunch"
+            case .dinner: return "dinner"
+            case .dessert: return "desserts"
+            }
+        }
     }
 }
 
